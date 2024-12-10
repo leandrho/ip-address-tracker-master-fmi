@@ -11,6 +11,11 @@
     box-sizing: border-box;
 }
 body{
-    min-height: 100dvh;
     font-family: 'Rubik', sans-serif;
+}
+#root{
+    height: 100dvh;
+}
+img{
+    min-width: 100%;
 }
