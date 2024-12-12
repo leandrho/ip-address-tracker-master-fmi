@@ -2,5 +2,26 @@
 
 }
 .search__box{
-
+    min-width: 550px;
+    min-height: 58px;
+    display: flex;
+}
+.input{
+    outline: none;
+    border: none;
+    flex-grow: 1;
+    padding: 0 1.5rem;
+    border-radius: 10px 0 0 10px;
+    font-size: 18px;
+}
+.btn{
+    outline: none;
+    border: none;
+    border-radius: 0 10px 10px 0;
+    width: 58px;
+    background-color: var(--Very-Dark-Gray);
+}
+.btn:hover{
+    background-color: var(--Very-Dark-Gray-Hover);
+    cursor: pointer;
 }

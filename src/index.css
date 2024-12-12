@@ -2,6 +2,7 @@
 :root{
     --Very-Dark-Gray: hsl(0, 0%, 17%);
     --Dark-Gray: hsl(0, 0%, 59%);
+    --Very-Dark-Gray-Hover: hsl(0, 0%, 29%);
 }
 *,
 *::after,
@@ -17,5 +18,6 @@ body{
     height: 100dvh;
 }
 img{
+    display: block;
     min-width: 100%;
 }
