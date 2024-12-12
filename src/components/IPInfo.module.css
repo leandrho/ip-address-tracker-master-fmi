@@ -1,0 +1,30 @@
+.container{
+    margin-top: 1rem;
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    padding-block: 38px;
+}
+.box{
+   width: 246px;
+   border-right: 1px solid  var(--Dark-Gray);
+   padding-inline: 2rem;
+
+   display: flex;
+   flex-direction: column;
+   gap: 1rem;
+}
+.container :last-child{
+    border-right: none;
+}
+.box h2{
+    font-size: 13px;
+    text-transform: uppercase;
+    color: var(--Dark-Gray);
+    font-weight: 700;
+}
+.box p{
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--Very-Dark-Gray);
+}
