@@ -25,3 +25,8 @@
     background-color: var(--Very-Dark-Gray-Hover);
     cursor: pointer;
 }
+@media screen and (max-width: 1009px){
+    .search__box{
+        min-width: 360px;
+    }
+}

@@ -28,3 +28,17 @@
     font-weight: 500;
     color: var(--Very-Dark-Gray);
 }
+@media screen and (max-width: 1009px){
+    .container{
+        flex-direction: column;
+        gap: 2rem;
+    }
+    .box{
+        width: 100%;
+        min-width: 360px;
+        border-right: none;
+        text-align: center;
+        gap: 0.5rem;
+     }
+
+}
