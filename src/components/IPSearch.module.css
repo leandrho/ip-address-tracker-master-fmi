@@ -1,5 +1,5 @@
 .search__form{
-
+    
 }
 .search__box{
     min-width: 550px;
@@ -27,6 +27,9 @@
 }
 @media screen and (max-width: 1009px){
     .search__box{
-        min-width: 360px;
+        max-width: 100%;
+        min-width: 320px;
+        width: 100%;
     }
+    .input{}
 }
