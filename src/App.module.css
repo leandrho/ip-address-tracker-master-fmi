@@ -34,6 +34,12 @@
     object-fit: cover;
 }
 
-@media screen and (min-width: 1009px){
-    
+@media screen and (max-width: 1009px){
+    .absolute {
+        gap: 1.5rem;
+        top: 2rem;
+    }
+    .title {
+        font-size: 22px;
+    }
 }
