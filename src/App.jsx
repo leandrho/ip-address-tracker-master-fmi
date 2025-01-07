@@ -1,6 +1,6 @@
 import { IPInfo } from "./components/IPInfo"
 import { IPSearch } from "./components/IPSearch"
-
+import { Map } from "./components/Map"
 import c from "./App.module.css"
 
 function App() {
@@ -18,10 +18,10 @@ function App() {
               <source media="(min-width: 581px)" srcSet="./images/pattern-bg-desktop.png" />
               <img src="./images/desktop-image-hero-1.jpg" alt="" className={c.back__img}/>
           </picture>
-          <figure className="map">
-            <img src="" alt="location map" />
-          </figure>
-        </main>        
+          <div id='map'>
+            <Map />
+          </div>
+        </main>   
       </div>
     </>
   )
