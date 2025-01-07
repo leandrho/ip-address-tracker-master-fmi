@@ -1,19 +1,38 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect } from "react";
+import { getLatLong } from "../services";
+import { IPContext } from "../context/IPContext";
 
-
-// Desc: Custom hook to get the user's IP address
 export const useIP = () => {
-    const [ip, setIP] = useState('');
+   const {ip, setIP, ll, setLL} = useContext(IPContext);
+   const getLL = async (ip) => {
+        const {lat, lng} = await getLatLong(ip);
+        setLL({lat, lng});
+   }
     useEffect(() => {
-        const url =`https://geo.ipify.org/api/v2/country,city?apiKey=${import.meta.env.VITE_APP_IPKEY}&ipAddress=${ip}`
-        fetch(url).then(res => res.json()).then(data => {
-            const {lat, lng} = data.location;
-            console.log(lat, lng);
-        })
-    }, 
-    [ip]);
-    return {
-        ip,
-        setIP
-    }
+        if(!ip)
+            return;
+        getLL(ip);
+    }, [ip]);
+
+   return {
+         ip,
+         setIP,
+         ll,
+         setLL
+   }
 }
+// const [ip, setIP] = useState('');
+// const [ll, setLl] = useState({lat: 0, lng: 0});
+// const getLL = async (ip) => {
+//     const {lat, lng} = await getLatLong(ip);
+//     setLl({lat, lng});
+//     console.log('NEW LAT: ', lat, 'NEW LNG: ', lng);
+// }
+// useEffect(() => {
+//    getLL(ip);
+// }, [ip]);
+// return {
+//     ip,
+//     setIP
+//     ,ll
+// }
