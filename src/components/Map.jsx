@@ -15,15 +15,15 @@ function ChangeView({ center, zoom }) {
   }
 
 export const Map = () => {
-    const {ll} = useIP();
+    const {ipInfo} = useIP();
     const [position, setPosition] = useState([0, 0])
 
     useEffect(() => {
-        setPosition([ll.lat, ll.lng]);
-    }, [ll]);
+        setPosition([ipInfo.lat, ipInfo.lng]);
+    }, [ipInfo]);
 
     return (
-        <MapContainer center={position} zoom={15} scrollWheelZoom={false} style={{ height: "600px", width: "100%" }}>
+        <MapContainer center={position} zoom={15} scrollWheelZoom={true} style={{ height: "65vh", width: "100%" }}>
             <TileLayer
                attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
