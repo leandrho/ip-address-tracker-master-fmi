@@ -1,38 +1,26 @@
 import { useContext, useEffect } from "react";
-import { getLatLong } from "../services";
+import { getIPInfo } from "../services";
 import { IPContext } from "../context/IPContext";
 
 export const useIP = () => {
-   const {ip, setIP, ll, setLL} = useContext(IPContext);
-   const getLL = async (ip) => {
-        const {lat, lng} = await getLatLong(ip);
-        setLL({lat, lng});
+   const {ip, setIP, ipInfo, setIpInfo} = useContext(IPContext);
+   const getInfo = async (ip) => {
+        const ipInfo = await getIPInfo(ip);
+        setIpInfo(ipInfo);
    }
     useEffect(() => {
-        if(!ip)
+        console.log('cambio a: ', ip)
+        console.log('curIP: ', ipInfo.curIP)
+        if(ip === '' && ipInfo.curIP == ip)
             return;
-        getLL(ip);
+        console.log('se optiene...')
+        getInfo(ip);
     }, [ip]);
 
    return {
          ip,
          setIP,
-         ll,
-         setLL
+         ipInfo,
+         setIpInfo
    }
 }
-// const [ip, setIP] = useState('');
-// const [ll, setLl] = useState({lat: 0, lng: 0});
-// const getLL = async (ip) => {
-//     const {lat, lng} = await getLatLong(ip);
-//     setLl({lat, lng});
-//     console.log('NEW LAT: ', lat, 'NEW LNG: ', lng);
-// }
-// useEffect(() => {
-//    getLL(ip);
-// }, [ip]);
-// return {
-//     ip,
-//     setIP
-//     ,ll
-// }
