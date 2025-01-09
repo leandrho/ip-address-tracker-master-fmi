@@ -31,7 +31,7 @@ export const Map = () => {
             <ChangeView center={position} zoom={15} />
             <Marker position={position}>
                 <Popup>
-                    A pretty CSS3 popup. <br /> Easily customizable.
+                    {ipInfo.city}
                 </Popup>
             </Marker>
         </MapContainer>
