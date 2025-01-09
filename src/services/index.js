@@ -14,7 +14,6 @@ export const getIPInfo = async (ip) => {
             lat, lng,
             curIP: ip
         }
-        console.log(ret)
         return ret;
     }
     catch(err){

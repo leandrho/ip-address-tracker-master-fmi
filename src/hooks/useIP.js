@@ -9,11 +9,8 @@ export const useIP = () => {
         setIpInfo(ipInfo);
    }
     useEffect(() => {
-        console.log('cambio a: ', ip)
-        console.log('curIP: ', ipInfo.curIP)
         if(ip === '' && ipInfo.curIP == ip)
             return;
-        console.log('se optiene...')
         getInfo(ip);
     }, [ip]);
 
