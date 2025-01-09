@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
-import L from 'leaflet';
 import { useIP } from '../hooks/useIP';
 
 function ChangeView({ center, zoom }) {
